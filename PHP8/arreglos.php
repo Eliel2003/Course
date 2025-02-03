@@ -41,9 +41,67 @@ unset($datos["sexo"]);
 $forma1[0] = "Piña";
 $datos["nombre"] = "Arturo";
 
-asort($frutas); //Ordenar de forma ascendente
-
 //FUNCIONES DE ARREGLOS
+asort($frutas); //Ordenar de forma ascendente
+arsort($frutas); //Ordenar de forma descendente
+array_search("Uva",$frutas); //Buscar un elemento
+array_replace($frutas,[
+    0 => "Papaya",
+    1 => "Piña",
+]); //Reemplazar los elementos de un arreglo por los elementos de otro arreglo
+
+
+/*  ARREGLOS MULTIDIMENSIONALES
+Los arreglos multidimensionales(Matriz) son muy poderosos porque
+permiten que aún mas información sea almacenada en una variable,
+convirtiendo en portables a inmensos conjuntos de datos.
+*/
+ 
+$animales = [
+    ["Puma","León","Tigre"], //Index 0
+    ["Águila","Buitre","Cóndor"], //Index 1
+    ["Serpiente","Cocodrilo","Tortuga"] //Index 2
+];
+
+$animals = [
+    "Felinos" => ["Puma","León","Tigre"], //Index 0
+    "Aves" => ["Águila","Buitre","Cóndor"], //Index 1
+    "Reptiles" => ["Serpiente","Cocodrilo","Tortuga"] //Index 2
+];
+
+
+echo $animales[2][1];
+echo $animals["Reptiles"][2];
+echo "<br>";
+
+//Recorrer un arreglo multidimensional
+foreach($animals as $key => $clasificacion){
+    foreach($clasificacion as $animal){
+        echo "$key: {$animal}". "<br>";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Más funciones de arreglos
 echo count($forma1); //Contar elementos
 echo "<br>";
 echo array_pop($forma1); //Eliminar el ultimo elemento
